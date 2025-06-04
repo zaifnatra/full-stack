@@ -11,7 +11,8 @@ db.once('open', () => console.log('Connected to Database'));
 
 app.use(express.json());
 
-// keep going 6:30
+const users =  require('./routes/huzaifa');
+app.use('/huzaifa', users);
 
 app.listen(3000, () => console.log('server on'))
 
