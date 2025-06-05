@@ -3,8 +3,13 @@ const router = express.Router();
 
 // get all user info
 router.get('/:id', (req, res) => { 
+    res.send('Hello Word')
 })
 
+router.get('/', (req, res) => {
+    res.send(req.params.id)
+}
+);
 //create
 router.post('/', (req, res) => {
 });
@@ -14,7 +19,7 @@ router.patch('/', (req, res) => {
 });
 
 //delete
-router.patch('/delete', (req, res) => {
+router.delete('/:id', (req, res) => {
 });
 
 

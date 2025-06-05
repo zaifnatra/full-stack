@@ -12,7 +12,7 @@ db.once('open', () => console.log('Connected to Database'));
 app.use(express.json());
 
 const users =  require('./routes/huzaifa');
-app.use('/huzaifa', users);
+app.use('/users', users);
 
 app.listen(3000, () => console.log('server on'))
 
