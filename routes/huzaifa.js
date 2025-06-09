@@ -3,8 +3,13 @@ const router = express.Router();
 const User = require('../models/users');
 
 // get all user info
-router.get('/:id', (req, res) => { 
-    res.send('Hello Word')
+router.get('/', async (req, res) => { 
+    try {
+        const users = await User.find();
+        res.json(users);
+    } catch (err) {
+        res.status(500).json('Server Error');
+    }
 })
 
 router.get('/', (req, res) => {
