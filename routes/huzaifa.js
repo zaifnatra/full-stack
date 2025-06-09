@@ -15,10 +15,23 @@ router.get('/', async (req, res) => {
 router.get('/', (req, res) => {
     res.send(req.params.id)
 }
-);
+)
 //create
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
+    const user = new User({
+        name: req.body.name,
+        userSubscription: req.body.userSubscription,
+        userSubscriptionDate: req.body.userSubscriptionDate
+    });
+
+    try {
+        const newSubscriber = await user.save();
+        res.status(201).json(newSubscriber); 
+    } catch (err) {
+        res.status(400).json({ message: err.message }); 
+    }
 });
+
 
 //update
 router.patch('/', (req, res) => {
