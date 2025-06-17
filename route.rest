@@ -12,3 +12,10 @@ Content-Type: application/json
   "name": "zaif",
 }
 
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+  "name": "zaif",
+  "email": " 
